@@ -259,6 +259,7 @@ def sdk_override_errors(job: str, label: str) -> list[str]:
             "repository": "beamfall/plugin-sdk",
             "ref": "${{ inputs.sdk_ref }}",
             "path": "beamfall-plugin-sdk",
+            "persist-credentials": "false",
         }:
             errors.append(f"{label} SDK override checkout inputs changed")
     if len(use) != 1:

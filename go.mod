@@ -1,6 +1,6 @@
 module github.com/beamfall/plugin-familyarchive
 
-go 1.27.3
+go 1.27.4
 
 require github.com/beamfall/plugin-sdk v0.3.4
 
