@@ -2,6 +2,6 @@ module github.com/beamfall/plugin-familyarchive
 
 go 1.27.4
 
-require github.com/beamfall/plugin-sdk v0.3.5
+require github.com/beamfall/plugin-sdk v0.3.6
 
 require golang.org/x/text v0.40.0 // indirect
