@@ -12,8 +12,8 @@ func Bundle() sdk.Bundle {
 	return sdk.Bundle{
 		ID:                   PluginID,
 		Version:              "0.1.4",
-		SDKFloor:             "0.3.7",
-		SDKCeiling:           "0.3.7",
+		SDKFloor:             "0.4.0",
+		SDKCeiling:           "0.4.0",
 		DisplayName:          sdk.LocaleString{"en": "Family Archive", "fr": "Archives familiales"},
 		MediaLabel:           sdk.LocaleString{"en": "Home Video", "fr": "Vidéo familiale"},
 		MediaClasses:         []string{"video"},
