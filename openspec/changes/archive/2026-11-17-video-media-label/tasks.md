@@ -6,4 +6,4 @@
 ## 2. Land
 
 - [x] 2.1 `script/gate.sh` green on the landing head.
-- [ ] 2.2 `openspec archive video-media-label` after the change lands.
+- [x] 2.2 `openspec archive video-media-label` after the change lands.
