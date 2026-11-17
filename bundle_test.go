@@ -44,3 +44,18 @@ func TestBundleDisplayName(t *testing.T) {
 		}
 	}
 }
+
+// TestBundleMediaLabels pins what hosts call this plugin's media: the media
+// label and the home-video class label both read "Video", while the class ID
+// stored on parsed media stays home-video.
+func TestBundleMediaLabels(t *testing.T) {
+	b := Bundle()
+	for locale, want := range map[string]string{"en": "Video", "fr": "Vidéo"} {
+		if got := b.MediaLabel[locale]; got != want {
+			t.Errorf("Bundle().MediaLabel[%q] = %q, want %q", locale, got, want)
+		}
+		if got := b.MediaClassLabels["home-video"][locale]; got != want {
+			t.Errorf("Bundle().MediaClassLabels[home-video][%q] = %q, want %q", locale, got, want)
+		}
+	}
+}

@@ -15,7 +15,7 @@ func Bundle() sdk.Bundle {
 		SDKFloor:             "0.4.0",
 		SDKCeiling:           "0.4.0",
 		DisplayName:          sdk.LocaleString{"en": "Archive", "fr": "Archives"},
-		MediaLabel:           sdk.LocaleString{"en": "Home Video", "fr": "Vidéo familiale"},
+		MediaLabel:           sdk.LocaleString{"en": "Video", "fr": "Vidéo"},
 		MediaClasses:         []string{"video"},
 		IdentificationPolicy: sdk.IdentificationPolicyQueue,
 		Accent:               "#4B8A7A",
@@ -39,7 +39,7 @@ func Bundle() sdk.Bundle {
 				Label: sdk.LocaleString{"en": "Camera Model", "fr": "Modèle de l'appareil"}},
 		},
 		MediaClassLabels: map[string]sdk.LocaleString{
-			classHomeVideo: {"en": "Home Video", "fr": "Vidéo familiale"},
+			classHomeVideo: {"en": "Video", "fr": "Vidéo"},
 		},
 		EntityKinds: []sdk.EntityKind{
 			{
