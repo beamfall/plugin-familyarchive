@@ -9,6 +9,8 @@ Family Archive is the
 archive footage. It turns a folder of clips into a library you can browse by event, trip, person,
 and place, with titles and capture dates read from the files you already have.
 
+In Beamfall it appears as the library type **Archive**.
+
 The plugin reads local files only. It makes no network calls, runs no face recognition and does
 not extract location data.
 

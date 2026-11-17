@@ -29,3 +29,18 @@ func TestBundleCompatibleWithPinnedSDK(t *testing.T) {
 		t.Fatalf("Bundle() compat range [%s, %s] excludes pinned SDK %s", b.SDKFloor, b.SDKCeiling, sdk.Version)
 	}
 }
+
+// TestBundleDisplayName pins the name hosts show for this plugin and the ID
+// they key on: the label is "Archive" while the ID stays familyarchive, so a
+// rename of one never moves the other.
+func TestBundleDisplayName(t *testing.T) {
+	b := Bundle()
+	if b.ID != "familyarchive" {
+		t.Fatalf("Bundle().ID = %q, want %q", b.ID, "familyarchive")
+	}
+	for locale, want := range map[string]string{"en": "Archive", "fr": "Archives"} {
+		if got := b.DisplayName[locale]; got != want {
+			t.Errorf("Bundle().DisplayName[%q] = %q, want %q", locale, got, want)
+		}
+	}
+}

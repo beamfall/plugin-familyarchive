@@ -6,5 +6,5 @@
 
 ## 2. Land
 
-- [ ] 2.1 `script/gate.sh` green on the landing head.
+- [x] 2.1 `script/gate.sh` green on the landing head.
 - [ ] 2.2 `openspec archive archive-display-name` after the change lands.
