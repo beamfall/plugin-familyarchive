@@ -13,7 +13,7 @@ func Bundle() sdk.Bundle {
 		ID:                   PluginID,
 		Version:              "0.1.4",
 		SDKFloor:             "0.4.0",
-		SDKCeiling:           "0.4.0",
+		SDKCeiling:           "0.4.1",
 		DisplayName:          sdk.LocaleString{"en": "Archive", "fr": "Archives"},
 		MediaLabel:           sdk.LocaleString{"en": "Video", "fr": "Vidéo"},
 		MediaClasses:         []string{"video"},
