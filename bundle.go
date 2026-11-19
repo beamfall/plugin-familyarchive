@@ -16,7 +16,7 @@ func Bundle() sdk.Bundle {
 		SDKCeiling:           "0.4.5",
 		DisplayName:          sdk.LocaleString{"en": "Archive", "fr": "Archives"},
 		MediaLabel:           sdk.LocaleString{"en": "Video", "fr": "Vidéo"},
-		MediaClasses:         []string{"video"},
+		MediaClasses:         []string{"video", "image"},
 		IdentificationPolicy: sdk.IdentificationPolicyQueue,
 		Accent:               "#4B8A7A",
 		MediaFields: []sdk.FieldSpec{

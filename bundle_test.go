@@ -1,6 +1,7 @@
 package familyarchive
 
 import (
+	"slices"
 	"testing"
 
 	sdk "github.com/beamfall/plugin-sdk"
@@ -10,6 +11,17 @@ import (
 // tags the head `v`+wantBundleVersion, so a bundle Version left behind by a
 // tag bump fails here instead of shipping a stale identity.
 const wantBundleVersion = "0.1.4"
+
+// CORE-2364: the scanner uses this declaration for both admission and
+// retirement of previously catalogued images (CORE-2361).
+func TestBundlePreservesArchivePhotos(t *testing.T) {
+	classes := Bundle().MediaClasses
+	for _, class := range []string{"video", "image"} {
+		if !slices.Contains(classes, class) {
+			t.Errorf("archive classes %v exclude %q content", classes, class)
+		}
+	}
+}
 
 // TestBundleVersionMatchesReleaseTag pins Bundle().Version to the semver of
 // the release tag applied to this head.
