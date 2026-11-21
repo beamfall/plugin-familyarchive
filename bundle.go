@@ -12,8 +12,8 @@ func Bundle() sdk.Bundle {
 	return sdk.Bundle{
 		ID:                   PluginID,
 		Version:              "0.1.4",
-		SDKFloor:             "0.4.6",
-		SDKCeiling:           "0.4.6",
+		SDKFloor:             "0.4.7",
+		SDKCeiling:           "0.4.7",
 		DisplayName:          sdk.LocaleString{"en": "Archive", "fr": "Archives"},
 		MediaLabel:           sdk.LocaleString{"en": "Video", "fr": "Vidéo"},
 		MediaClasses:         []string{"video", "image"},
@@ -43,10 +43,11 @@ func Bundle() sdk.Bundle {
 		},
 		EntityKinds: []sdk.EntityKind{
 			{
-				Name:            "event",
-				DisplayName:     sdk.LocaleString{"en": "Event", "fr": "Événement"},
-				Archetype:       "container",
-				OrderedChildren: true,
+				Name:              "event",
+				DisplayName:       sdk.LocaleString{"en": "Event", "fr": "Événement"},
+				PluralDisplayName: sdk.LocaleString{"en": "Events", "fr": "Événements"},
+				Archetype:         "container",
+				OrderedChildren:   true,
 				Fields: []sdk.FieldSpec{
 					{Name: "date", Type: "date", Sortable: true,
 						Label: sdk.LocaleString{"en": "Date", "fr": "Date"}},
@@ -65,9 +66,10 @@ func Bundle() sdk.Bundle {
 				// recognition or other automated biometric tagging, and adding
 				// any would be a new privacy-sensitive capability needing its
 				// own design review, not an incremental change here.
-				Name:        "person",
-				DisplayName: sdk.LocaleString{"en": "Person", "fr": "Personne"},
-				Archetype:   "person",
+				Name:              "person",
+				DisplayName:       sdk.LocaleString{"en": "Person", "fr": "Personne"},
+				PluralDisplayName: sdk.LocaleString{"en": "People", "fr": "Personnes"},
+				Archetype:         "person",
 				Fields: []sdk.FieldSpec{
 					// PII disclosure: free-text biographic notes,
 					// Searchable means the host's full-text index will contain
@@ -80,9 +82,10 @@ func Bundle() sdk.Bundle {
 				},
 			},
 			{
-				Name:        "place",
-				DisplayName: sdk.LocaleString{"en": "Place", "fr": "Lieu"},
-				Archetype:   "category",
+				Name:              "place",
+				DisplayName:       sdk.LocaleString{"en": "Place", "fr": "Lieu"},
+				PluralDisplayName: sdk.LocaleString{"en": "Places", "fr": "Lieux"},
+				Archetype:         "category",
 				Fields: []sdk.FieldSpec{
 					// PII disclosure: see person.notes above —
 					// same searchable-index-at-rest caveat applies.
@@ -94,10 +97,11 @@ func Bundle() sdk.Bundle {
 				},
 			},
 			{
-				Name:            "trip",
-				DisplayName:     sdk.LocaleString{"en": "Trip", "fr": "Voyage"},
-				Archetype:       "container",
-				OrderedChildren: true,
+				Name:              "trip",
+				DisplayName:       sdk.LocaleString{"en": "Trip", "fr": "Voyage"},
+				PluralDisplayName: sdk.LocaleString{"en": "Trips", "fr": "Voyages"},
+				Archetype:         "container",
+				OrderedChildren:   true,
 				Fields: []sdk.FieldSpec{
 					{Name: "start-date", Type: "date", Sortable: true,
 						Label: sdk.LocaleString{"en": "Start Date", "fr": "Date de début"}},
